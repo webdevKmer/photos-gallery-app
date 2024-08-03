@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block title %} Photo - Detail {% endblock title %}
+
+{% block content %}
+    <h1>Photo - Detail</h1>    
+    <a href="{% url 'photos:gallery' %}">Back to Gallery</a>
+    <h3>Category: {{ photo.category.name }}</h3>
+    <br>
+    <article>
+        <img src="{{ photo.image.url }}" alt="my photo #{{ photo.id }}">
+        <p>{{ photo.description }}</p>
+    </article>
+{% endblock content %}

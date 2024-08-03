@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block title %} Home {% endblock title %}
+
+{% block content %}
+    <h1>Photo Gallery</h1>
+    {% for photo in photos %}
+    <article>
+        <img src="{{ photo.image.url }}" alt="my photo #{{ photo.id }}">
+        <p>Category: {{ photo.category.name }}</p>
+        <a href="{% url 'photos:view' photo.id %}">View</a>
+    </article>
+    {% endfor %}
+{% endblock content %}

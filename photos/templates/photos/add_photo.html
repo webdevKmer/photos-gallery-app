@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block title %} Add Photo {% endblock title %}
+
+{% block content %}
+    <h1>Add Photo</h1>
+    <h3>Do you want add a <a href="{% url 'photos:new_category' %}">new category</a>?</h3>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Photo</button>
+    </form>
+{% endblock content %}

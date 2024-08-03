@@ -10,12 +10,14 @@
 </head>
 <body>
   <header>
+
+    <h3>Categories</h3>
     <nav>
-      <a href="">All</a>
-      <a href="">Travel</a>
-      <a href="">Food</a>
-      <a href="">Natur</a>
-      <a href="">Add Photo</a>
+      <a href="{% url 'photos:gallery' %}">All</a>
+      {% for category in categories %}
+      <a href="{% url 'photos:gallery' %}?category={{category.name}}">{{ category.name }}</a>
+      {% endfor %}
+      <a href="{% url 'photos:add' %}">Add Photo</a>
     </nav>
   </header>
   <main>

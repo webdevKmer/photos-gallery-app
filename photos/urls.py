@@ -8,5 +8,6 @@ urlpatterns = [
     path('', views.gallery, name='gallery'),
     path('photo/view/<str:pk>', views.view_photo, name='view'),
     path('photo/add/', views.add_photo, name='add'),
+    path('photo/new_category/', views.new_category, name='new_category'),
     
 ]
